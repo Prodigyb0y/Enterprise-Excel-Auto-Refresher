@@ -62,6 +62,7 @@ class ExcelRefresher:
         wb = None
         try:
             logger.info(f"Abrindo: {path_obj.name}")
+            time.sleep(5)
             wb = self.app.Workbooks.Open(str(path_obj.resolve()))
 
             # Desabilita atualização de tela para performance
@@ -75,6 +76,7 @@ class ExcelRefresher:
             self.app.CalculateUntilAsyncQueriesDone()
             
             wb.Save()
+            time.sleep(5)
             logger.info(f"✅ Sucesso: {path_obj.name} atualizada e salva.")
             return True
 
@@ -108,3 +110,4 @@ if __name__ == "__main__":
         logger.fatal(f"Erro fatal na execução do robô: {e}")
 
     logger.info(">>> Processo Finalizado <<<")
+
