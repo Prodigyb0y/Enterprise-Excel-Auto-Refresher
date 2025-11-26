@@ -29,3 +29,4 @@ Este projeto implementa um **wrapper orientado a objetos** em torno da API COM d
 
 ```bash
 pip install pywin32
+
